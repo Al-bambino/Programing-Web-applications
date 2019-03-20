@@ -18,15 +18,3 @@ echo '<br>';
 //...
 echo $d['k1'][2]['k2'][1]['though'][2][0];
 
-var_dump($d);
-include 'functions.php';
-dumper($d);
-
-
-$n = [
-    1 => 'str',
-    45 => 4000,
-    '2' => 'g',
-    23 => 's',
-];
-echo arrMaxKey($n);
