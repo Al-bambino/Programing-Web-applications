@@ -31,7 +31,7 @@
     <input type="radio" name="gender" value="male" id="male">
     <label for="other">Other</label>
     <input type="radio" name="gender" value="other" id="other" >
-    <span class="error">* <?php echo $genderErr;?></span>
+    <span class="error">* <?php echo $pointsErr;?></span>
     <br><br>
     <input type="submit" name="submit" value="Submit">
 </form>

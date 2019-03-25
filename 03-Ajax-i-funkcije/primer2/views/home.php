@@ -25,6 +25,6 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
     </script>
-    <script src="/primer2/js/script.js"></script>
+    <script src="/03-Ajax-i-funkcije/primer2/js/script.js"></script>
 </div>
 </html>

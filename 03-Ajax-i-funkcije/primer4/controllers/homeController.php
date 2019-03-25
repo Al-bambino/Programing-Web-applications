@@ -1,6 +1,6 @@
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
+$nameErr = $emailErr = $genderErr = $websiteErr = $yobErr = "" ;
 $name = $email = $gender = $comment = $website = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -8,13 +8,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     if(filter_input(INPUT_POST, 'yearOfBirth', FILTER_VALIDATE_INT))
     {
         $yob = (int)$_POST['yearOfBirth'];
-        if($yob < 2001) {
+        if($yob > 2001) {
 //            var_dump("JESTE int " . $yob);
-            $punoletan = true;
+            $yobErr = "Niste punletni";
         }
     }
-//    if(is_int($_POST["yearOfBirth"])) echo "int<br>";
-//    if(is_numeric($_POST["yearOfBirth"])) echo "numer<br>";
+
+
     if (empty($_POST["name"])) {
         $nameErr = "Name is required";
     } else {
@@ -59,11 +59,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     exit();
 }
 
-
-function test_input($a){
-
-
-//    echo 'asd';
-    return $a;
-}
 ?>

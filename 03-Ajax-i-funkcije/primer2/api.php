@@ -15,7 +15,7 @@ $vojskovodje = [
         'bitke' => ['Ivankovac', 'Deligrad', 'Cegar']
     ],
     [
-        'ime' => 'Stanoje', // Rodjen kod Smedervske Palanke
+        'ime' => 'Stanoje', // Rodjen kod Smedervske Palanke!!!!!
         'prezime' => 'Glavas',
         'titula' => 'Vojvoda',
         'bitke' => ['Deligrad', 'Beograd', 'Prokuplje']

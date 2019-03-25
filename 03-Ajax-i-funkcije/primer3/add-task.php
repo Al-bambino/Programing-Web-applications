@@ -16,6 +16,12 @@ if(isset($_POST['description']))
 
 
     // saljemo na view novi task ili error
+    if($descError || $compError ) {
+        echo json_encode([
+            'descriptionError' => $descError,
+            'complitedError' =>   $compError
+        ]);
+        exit();
+    }
     echo json_encode($_POST);
-
 }

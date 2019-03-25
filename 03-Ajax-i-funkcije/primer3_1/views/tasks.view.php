@@ -1,36 +1,34 @@
-<?php require 'partials/header.php' ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Raf</title>
+    <style>
+        body {
+            background-color: azure;
+        }
+    </style>
+</head>
+<body>
 
     <h1>My tasks</h1>
 
     <ul id="tasks">
-        <!--        --><?php
+                <?php
         //            foreach ($tasks as $task)
         //            {
         //                echo "<li>". $task['description']. "</li>";
         //            }
-        //        ?>
+                ?>
         <?php foreach ($tasks as $task): ?>
-            <li>
-
-                <?php if ($task['completed']): ?>
-                    <strike> <strong> Description: </strong> <?= $task['description'] ?> </strike>
-                <?php elseif($tasks['completedError']): ?>
-                    <li> <?=  $tasks['completedError']?></li>
-                <?php else: ?>
-                    <?= "<strong> Description: </strong> " . $task['description'] ?>
-                <? endif; ?>
-
-
-                <!--                --><? //= $task['completed'] ?  "<strike>" . $task['description'] ."</strike>" : $task['description'] ?>
-            </li>
-
+            <li><?= $task['subject']?></li>
         <? endforeach; ?>
     </ul>
     <div>
-        <form id="add-task" method="post" action="/primer3/add-task.php">
+        <form id="add-task" method="post" action="/03-Ajax-i-funkcije/primer3_1/add-task.php">
             <div>
-                <label for="description">Description:</label>
-                <input id="description" name="description" type="text">
+                <label for="subject">Subject:</label>
+                <input id="subject" name="subject" type="text">
             </div>
             <div>
                 <label for="completed">Completed:</label>
@@ -48,5 +46,6 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous">
     </script>
-    <script src="/primer3/js/script.js"></script>
-<?php require 'partials/footer.php' ?>
+    <script src="/03-Ajax-i-funkcije/primer3_1/js/script.js"></script>
+</body>
+</html>

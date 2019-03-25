@@ -143,7 +143,7 @@
         "prezime" => "Copperfield",
         "godinaRodjenja" => 1956,
     ];
-    //TODO radi u utorak
+
     foreach($madjionicar as $index => $value){
         echo $index . " => " . $value . "<br/>";
     }
@@ -154,7 +154,6 @@
     // Ne postoji element sa indeksom 0 -> u $madjionicar imamo: ime, prezime i goidnaRodjenja od indeksa
     echo "Element sa indeksom 0 : " . $madjionicar[0] . "<br>";
 
-    // TODO radi u sredu
     // isset proverava da li je varijabla setovana, ako mu proseldimo indeks u nizu,
     // proverva da li je tom indeksu setovana vrednost-> https://secure.php.net/manual/en/function.isset.php
     if(isset($madjionicar[5])){

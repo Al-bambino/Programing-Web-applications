@@ -2,6 +2,7 @@
 include 'functions.php';
 
 var_dump($d);
+
 dumper($d);
 
 $n = [
@@ -10,4 +11,5 @@ $n = [
     '2' => 'g',
     23 => 's',
 ];
+
 echo arrMaxKey($n);

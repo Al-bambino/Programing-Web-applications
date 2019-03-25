@@ -65,9 +65,9 @@ $('#button').click(function (e) {
         success : function (result) {
             console.log(result);
             let obj = JSON.parse(result); // kastujemo json string koji smo dobili u objekat
-            console.log(obj.titula);    // pristupamo  kljucevima tog objekta sto nam je prosledjen
+            console.log(obj.prezime);    // pristupamo  kljucevima tog objekta sto nam je prosledjen
             // metoda append na zadati element dodaje elemnt koji mu prosledite
-            $('#srbi').append('<li>' + obj.ime + '</li>'); // https://api.jquery.com/append/
+            $('#srbi').append('<li>' + obj.prezime + '</li>'); // https://api.jquery.com/append/
 
             // ukoliko saljete niz objekata sa servera:
             // for (let i = 0; i < obj.length; i++)
