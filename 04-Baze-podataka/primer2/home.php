@@ -14,7 +14,7 @@
     // Prvi nacin pisanja query-a u PDO je korsicenjem metode query()
     // kao rezultat dobijamo PDOStatment objekat : https://secure.php.net/manual/en/class.pdostatement.php
     // Da bismo pristipili rezulatatima koristimo fetch() ili fetchAll() metodu iz statmenta koji smo dobili
-    $stmt = $pdo->query("SELECT * FROM tasks");
+    $stmt = $pdo->query("SELECT * FROM tasks ");
     // Obe metode (fetch, fetchAll) kao opcioni argument imaju nacin na koji ce podaci biti pakovani.
     // Ako niste koristili setAttribute() metodu, mozete pri svakom pozivu definisati nacin pakovanja.
     // Vama interesantni nacini mogu biti :
@@ -32,7 +32,7 @@
     </ul>
 </div>
 <div>
-    <form method="post" action="tasks-form.php">
+    <form method="post" action="home-form.php">
 
         <label for="subject">Task subject</label>
         <input id="subject" name="subject" type="text">

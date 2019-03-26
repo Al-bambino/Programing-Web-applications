@@ -16,7 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     if (empty($_POST['points'])) {
         $pointsErr = "Points can not be emtpy";
         $errors = true;
-    } else if (filter_input(INPUT_POST, 'points', FILTER_VALIDATE_INT)) {
+
+        // filter_var() funkcija vam omogucava da radite neka od redefinisanih filtriranja/validacije
+        // koja vam PHP nudi. Prvi arugument je varijabla koju filtrirate druga je neki od PHP filtera
+        //   https://www.php.net/manual/en/function.filter-var.php
+        //   https://www.php.net/manual/en/filter.filters.php
+    } else if (filter_var($_POST['points'], FILTER_VALIDATE_INT)) {
         $points = (int)$_POST['points'];
         if ($points < 0) {
             $pointsErr = "Points must be positive";
@@ -47,7 +52,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
      * u vasem HTTP paketu.
      * Ako header metodu koristite za redirekciju, njen stirng izgleda:
      *          Location: <url_za_redirekciju>
-     * Primetite jedan space posle dovtacke.
      * Url ne treba da bude pod navodnicima.
      *
      * ********* PRE UPOTREBE OVE FUNKCIJE OBAVEZNO PROCITATI: *********
@@ -65,8 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     // user's input is safe here
 
     include 'conection.php';
-//    $pdo->query("INSERT INTO tasks (subject, description,status, user_id,  points)
-//                            values ('$subject', '$description', 1, 1, $points)");
+    $pdo->query("INSERT INTO tasks (subject, description,status, user_id,  points)
+                            values ('$subject', '$description', 1, 1, $points)");
 
 
     /**
@@ -80,8 +84,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
      *  podataka koje treba da zameni u statmentu.
      */
     $stmt = $pdo->prepare("
-                  INSERT INTO tasks 
-                  (subject, description, status, user_id,  points) 
+                  INSERT INTO tasks
+                  (subject, description, status, user_id,  points)
                   VALUES (:subject, :description, :status, :user_id, :points)
      ");
 
@@ -99,6 +103,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
      *      2. Nema potrebe da placeholdere stavljate u navodnike.
      *      3. Pri pozivu execute u asoc nizu kao kljuceve navodite nazive placeholdera bez dvotacke.
      */
-
     header("Location: home.php");
 }

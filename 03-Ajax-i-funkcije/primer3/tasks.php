@@ -1,10 +1,10 @@
 <?php
 
 $tasks = [
-  0 =>  [ 'description' => 'Desc', 'completed' => false],
-  1 =>  [ 'description' => 'Opis', 'completed' => true],
-  2 =>  [ 'description' => 'Ipsum', 'completed' => false],
-  3 =>  [ 'description' => 'LOREM', 'completed' => true],
+  0 =>  [ 'subject' => 'Desc', 'completed' => false],
+  1 =>  [ 'subject' => 'Opis', 'completed' => true],
+  2 =>  [ 'subject' => 'Ipsum', 'completed' => false],
+  3 =>  [ 'subject' => 'LOREM', 'completed' => true],
 ];
 
 //echo json_encode($tasks);
